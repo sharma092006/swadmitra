@@ -6,7 +6,6 @@ import {
   Menu,
   X,
   ChevronDown,
-  Globe,
   Heart,
   Mail,
   Phone,
