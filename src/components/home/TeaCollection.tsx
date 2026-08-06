@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ShoppingBag, Star, ArrowRight, ChevronRight, Leaf } from 'lucide-react';
 
 const teaCategories = [
