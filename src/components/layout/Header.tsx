@@ -20,8 +20,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
-      return document.documentElement.classList.contains('dark') || 
-             window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return document.documentElement.classList.contains('dark') ||
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
     return false;
   });
@@ -78,13 +78,13 @@ export default function Header() {
         {/* Right Side: Socials & Theme Toggle */}
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-4">
-            <a href="#" className="text-[#a89f91] hover:text-white transition-colors duration-200"><FaFacebook className="w-3.5 h-3.5" /></a>
-            <a href="#" className="text-[#a89f91] hover:text-white transition-colors duration-200"><FaTwitter className="w-3.5 h-3.5" /></a>
-            <a href="#" className="text-[#a89f91] hover:text-white transition-colors duration-200"><FaLinkedin className="w-3.5 h-3.5" /></a>
-            <a href="#" className="text-[#a89f91] hover:text-white transition-colors duration-200"><FaInstagram className="w-3.5 h-3.5" /></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#a89f91] hover:text-white transition-colors duration-200"><FaFacebook className="w-3.5 h-3.5" /></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#a89f91] hover:text-white transition-colors duration-200"><FaTwitter className="w-3.5 h-3.5" /></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#a89f91] hover:text-white transition-colors duration-200"><FaLinkedin className="w-3.5 h-3.5" /></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#a89f91] hover:text-white transition-colors duration-200"><FaInstagram className="w-3.5 h-3.5" /></a>
           </div>
           <div className="h-4 w-px bg-white/10"></div>
-          <button 
+          <button
             onClick={toggleDarkMode}
             className="flex items-center space-x-2 hover:text-white transition-colors duration-200 group"
           >
@@ -106,8 +106,8 @@ export default function Header() {
       {/* Main Navigation - Floating Boxy Style */}
       <div className={`px-4 sm:px-6 md:px-8 xl:px-16 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
         <div className={`mx-auto max-w-[1400px] flex items-center justify-between bg-white/95 dark:bg-[#1a1a1a]/95 backdrop-blur-md rounded-2xl md:rounded-[2rem] px-4 md:px-8 py-3 transition-all duration-500 border border-gray-100 dark:border-white/10 ${isScrolled
-            ? 'shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-[0_8px_30px_rgba(255,255,255,0.03)] translate-y-0'
-            : 'shadow-[0_4px_20px_rgb(0,0,0,0.04)] dark:shadow-none translate-y-2'
+          ? 'shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-[0_8px_30px_rgba(255,255,255,0.03)] translate-y-0'
+          : 'shadow-[0_4px_20px_rgb(0,0,0,0.04)] dark:shadow-none translate-y-2'
           }`}>
 
           {/* Left: Logo & Mobile Menu */}
@@ -130,7 +130,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={`#${link.name.toLowerCase()}`}
+                href={`#${link.name.toLowerCase().replace(' ', '-')}`}
                 className="group flex items-center space-x-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-[#7b2c2c] dark:hover:text-[#d4a373] transition-colors duration-300"
               >
                 <span>{link.name}</span>
@@ -160,7 +160,7 @@ export default function Header() {
                 </span>
               </div>
             </button>
-            
+
             <button className="hidden md:block ml-4 bg-[#7b2c2c] hover:bg-[#5c2121] dark:bg-[#d4a373] dark:hover:bg-[#b0875e] text-white dark:text-gray-900 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
               Order Now
             </button>
@@ -174,18 +174,18 @@ export default function Header() {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={`#${link.name.toLowerCase()}`}
+              href={`#${link.name.toLowerCase().replace(' ', '-')}`}
               className="text-base font-medium text-gray-800 dark:text-gray-200 pb-3 border-b border-gray-100 dark:border-gray-800"
             >
               {link.name}
             </a>
           ))}
           <div className="pt-2 flex flex-col space-y-4">
-            <a href="#" className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
+            <a href="#account" className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
               <User className="w-5 h-5" />
               <span>My Account</span>
             </a>
-            <a href="#" className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
+            <a href="#wishlist" className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
               <Heart className="w-5 h-5" />
               <span>Wishlist</span>
             </a>

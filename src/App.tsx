@@ -1,5 +1,14 @@
 import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
 import Hero from './components/home/Hero'
+import TeaCollection from './components/home/TeaCollection'
+import B2BSolutions from './components/home/B2BSolutions'
+import B2BAdvantage from './components/home/B2BAdvantage'
+import PartnershipJourney from './components/home/PartnershipJourney'
+import BestSelling from './components/home/BestSelling'
+import CorporateFAQ from './components/home/CorporateFAQ'
+import B2BConnect from './components/home/B2BConnect'
+import SampleRequestCTA from './components/home/SampleRequestCTA'
 
 function App() {
   return (
@@ -9,10 +18,18 @@ function App() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Main Content Area Placeholder for Future Sections */}
-      <main className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 xl:px-16 py-12">
-        {/* Further components like Categories, Best Sellers, etc., will go here */}
+      <main>
+        <TeaCollection />
+        <B2BSolutions />
+        <B2BAdvantage />
+        <PartnershipJourney />
+        <BestSelling />
+        <CorporateFAQ />
+        <B2BConnect />
+        <SampleRequestCTA />
       </main>
+      
+      <Footer />
     </div>
   )
 }
