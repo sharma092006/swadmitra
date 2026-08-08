@@ -2,18 +2,21 @@ import ProductCard from '../components/shop/ProductCard';
 import { Filter } from 'lucide-react';
 import { useState } from 'react';
 
-import assamCtcImg from '../assets/assam_ctc_tea_1786083099298.png';
-import darjeelingImg from '../assets/darjeeling_first_flush_1786083109823.png';
-import masalaChaiImg from '../assets/masala_chai_1786083121309.png';
-import earlGreyImg from '../assets/earl_grey_1786083131352.png';
 import heroBgImg from '../assets/premium_tea_hero_1786082060617.png';
 
 export default function Shop() {
+  const mockImages = [
+    'https://images.unsplash.com/photo-1702987908200-de80baec74e4?q=80&w=600&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1767721887917-ad186b3f5f2d?q=80&w=600&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1572232189109-8462e31c1202?q=80&w=600&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop'
+  ];
+
   const products = [
-    { id: '1', name: 'Premium Assam CTC Black Tea', category: 'Assam CTC', price: 2499, image: assamCtcImg },
-    { id: '2', name: 'Darjeeling First Flush Reserve', category: 'Darjeeling', price: 3499, image: darjeelingImg },
-    { id: '3', name: 'Authentic Indian Masala Chai', category: 'Blends', price: 1999, image: masalaChaiImg },
-    { id: '4', name: 'Earl Grey Royal Blend', category: 'Blends', price: 2899, image: earlGreyImg }
+    { id: '1', name: 'Premium Assam CTC Black Tea', category: 'Assam CTC', price: 2499, images: [mockImages[0], mockImages[1], mockImages[2]] },
+    { id: '2', name: 'Darjeeling First Flush Reserve', category: 'Darjeeling', price: 3499, images: [mockImages[1], mockImages[2], mockImages[3]] },
+    { id: '3', name: 'Authentic Indian Masala Chai', category: 'Blends', price: 1999, images: [mockImages[2], mockImages[3], mockImages[0]] },
+    { id: '4', name: 'Earl Grey Royal Blend', category: 'Blends', price: 2899, images: [mockImages[3], mockImages[0], mockImages[1]] }
   ];
 
   const categories = ['All Collections', 'Assam CTC', 'Darjeeling', 'Orthodox', 'Blends'];
