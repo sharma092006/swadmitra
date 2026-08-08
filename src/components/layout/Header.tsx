@@ -64,6 +64,7 @@ export default function Header() {
     { name: 'Services', path: '/services' },
     { name: 'Our Story', path: '/our-story' },
     { name: 'Quality', path: '/#quality' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (

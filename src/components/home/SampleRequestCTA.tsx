@@ -22,10 +22,10 @@ export default function SampleRequestCTA() {
         <div className="bg-white dark:bg-[#111]/90 border-2 border-[#d4a373]/20 shadow-[0_0_50px_rgba(0,0,0,0.05)] dark:shadow-none p-10 lg:p-14 text-center relative group transition-colors duration-300">
           
           {/* Corner accents */}
-          <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#d4a373] -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#d4a373] translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#d4a373] -translate-x-1/2 translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#d4a373] translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#d4a373]"></div>
+          <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#d4a373]"></div>
+          <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#d4a373]"></div>
+          <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#d4a373]"></div>
 
           {/* Top Badge */}
           <div className="inline-flex items-center space-x-2 bg-white dark:bg-[#050505] border border-black/10 dark:border-white/10 px-4 py-1.5 mb-8 transition-colors duration-300">

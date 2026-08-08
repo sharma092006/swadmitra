@@ -44,7 +44,7 @@ export default function Hero() {
             Sourced directly from the highest altitude gardens, our exclusive blends offer an unforgettable aroma, rich color, and a beautifully balanced taste.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 opacity-0 animate-[fadeInUp_1s_ease-out_0.6s_forwards]">
+          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 w-full sm:w-auto opacity-0 animate-[fadeInUp_1s_ease-out_0.6s_forwards]">
             <button className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-[#d4a373] hover:bg-[#c39160] text-gray-900 px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 shadow-[0_0_20px_rgba(212,163,115,0.4)] hover:shadow-[0_0_30px_rgba(212,163,115,0.6)] transform hover:-translate-y-1">
               <span>Shop Now</span>
               <ArrowRight className="w-5 h-5" />
