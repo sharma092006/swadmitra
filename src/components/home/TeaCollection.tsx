@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { ShoppingBag, Star, ArrowRight, ChevronRight, Leaf } from 'lucide-react';
+import { ArrowRight, ChevronRight, Leaf } from 'lucide-react';
+import ProductCard from '../shop/ProductCard';
 
 const teaCategories = [
   {
@@ -174,53 +175,41 @@ export default function TeaCollection() {
           <h2 className="text-2xl md:text-4xl font-serif font-bold text-[#2c1e16] dark:text-[#f4ebd0] tracking-tight mb-3">
             Premium Tea Collection
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl text-sm md:text-base">
+          <p className="text-gray-800 dark:text-gray-400 max-w-2xl text-sm md:text-base">
             Explore our curated selection of world-class teas, handpicked for exceptional flavor, aroma, and wellness benefits.
           </p>
         </div>
 
         {/* Premium Boxy Layout Container */}
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-[2rem] border border-gray-100 dark:border-white/5 shadow-[0_8px_40px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_40px_rgba(255,255,255,0.02)] overflow-hidden">
+        <div className="bg-white dark:bg-[#1a1a1a] rounded-[2rem] border border-black/10 dark:border-white/5 shadow-[0_8px_40px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_40px_rgba(255,255,255,0.02)] overflow-hidden">
           
-          {/* Main Visual Image & Tab Navigation Header */}
-          <div className="relative w-full h-[260px] md:h-[340px] overflow-hidden">
-            {/* Background Image that changes with category */}
-            <div 
-              className={`absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out transform ${isAnimating ? 'scale-105 opacity-80' : 'scale-100 opacity-100'}`}
-              style={{ backgroundImage: `url(${activeCategory.image})` }}
-            >
-              {/* Gradient Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-t ${activeCategory.themeColor} mix-blend-multiply transition-colors duration-500`} />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent" />
+          {/* Tab Navigation & Category Info */}
+          <div className="w-full bg-white dark:bg-[#1a1a1a] pt-6 md:pt-8 px-5 md:px-8 lg:px-10">
+            {/* Tabs */}
+            <div className="flex overflow-x-auto hide-scrollbar pb-4 gap-3 items-center justify-start border-b border-black/10 dark:border-white/10">
+              {teaCategories.map((category, index) => (
+                <button
+                  key={category.id}
+                  onClick={() => handleTabChange(index)}
+                  className={`
+                    px-5 py-2 rounded-full whitespace-nowrap text-[13.5px] font-semibold transition-all duration-300
+                    ${activeCategoryIndex === index 
+                      ? 'bg-[#d4a373] text-white shadow-md' 
+                      : 'bg-gray-100 text-gray-600 dark:bg-[#222] dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-[#333]'
+                    }
+                  `}
+                >
+                  {category.name}
+                </button>
+              ))}
             </div>
 
-            {/* Tab Navigation (Positioned over image) */}
-            <div className="absolute top-0 left-0 right-0 z-10 pt-4 md:pt-6 px-4 md:px-6">
-              <div className="flex overflow-x-auto hide-scrollbar snap-x pb-3 gap-2 items-center justify-start md:justify-center">
-                {teaCategories.map((category, index) => (
-                  <button
-                    key={category.id}
-                    onClick={() => handleTabChange(index)}
-                    className={`
-                      relative px-4 py-2 rounded-full whitespace-nowrap text-[13px] md:text-sm font-semibold transition-all duration-300 snap-center
-                      ${activeCategoryIndex === index 
-                        ? 'bg-white/20 text-white backdrop-blur-md shadow-lg border border-white/30' 
-                        : 'bg-black/20 text-white/80 hover:bg-black/40 hover:text-white backdrop-blur-sm border border-transparent'
-                      }
-                    `}
-                  >
-                    {category.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Category Banner Content */}
-            <div className={`absolute bottom-0 left-0 right-0 p-5 md:p-8 z-10 transition-all duration-500 transform ${isAnimating ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'}`}>
-              <h3 className="text-3xl md:text-5xl font-serif font-bold text-white mb-2 drop-shadow-lg">
+            {/* Category Info */}
+            <div className={`pt-6 md:pt-8 pb-2 transition-all duration-500 transform ${isAnimating ? 'translate-y-2 opacity-0' : 'translate-y-0 opacity-100'}`}>
+              <h3 className="text-3xl md:text-4xl font-serif font-bold text-black dark:text-white mb-2">
                 {activeCategory.name}
               </h3>
-              <p className="text-white/90 text-sm md:text-base max-w-2xl font-medium drop-shadow-md line-clamp-2 md:line-clamp-none">
+              <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base max-w-3xl">
                 {activeCategory.description}
               </p>
             </div>
@@ -229,7 +218,7 @@ export default function TeaCollection() {
           {/* Product Grid Area */}
           <div className="p-5 md:p-8 lg:p-10">
             <div className="flex items-center justify-between mb-6">
-              <h4 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
+              <h4 className="text-lg md:text-xl font-bold text-black dark:text-white">
                 Featured {activeCategory.name}s
               </h4>
               <button className="hidden md:flex items-center gap-1.5 text-[13px] font-semibold text-[#d4a373] hover:text-[#b3855a] transition-colors group">
@@ -237,49 +226,24 @@ export default function TeaCollection() {
               </button>
             </div>
 
-            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
+            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
               {activeCategory.products.map((product, idx) => (
-                <div 
-                  key={idx} 
-                  className="group relative bg-gray-50 dark:bg-[#222] rounded-2xl p-3 md:p-4 border border-gray-100 dark:border-white/5 hover:border-[#d4a373]/30 dark:hover:border-[#d4a373]/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col"
-                >
-                  {/* Mock Image Box */}
-                  <div className="w-full aspect-square bg-gray-200 dark:bg-[#333] rounded-xl mb-3 md:mb-4 overflow-hidden relative group-hover:shadow-inner transition-all duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#d4a373]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay" />
-                    <img 
-                      src={product.image} 
-                      alt={product.name} loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    {/* Quick Add Button */}
-                    <button className="absolute bottom-3 right-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-2.5 rounded-full shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-[#d4a373] hover:text-white dark:hover:bg-[#d4a373] z-20">
-                      <ShoppingBag className="w-4 h-4" />
-                    </button>
-                  </div>
-                  
-                  {/* Product Details */}
-                  <div className="flex-1 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center gap-1 mb-1.5">
-                        <Star className="w-3 h-3 fill-[#d4a373] text-[#d4a373]" />
-                        <span className="text-[11px] font-bold text-gray-700 dark:text-gray-300">{product.rating}</span>
-                        <span className="text-[11px] text-gray-500 dark:text-gray-400">({product.reviews})</span>
-                      </div>
-                      <h5 className="font-bold text-gray-900 dark:text-white text-sm leading-tight mb-1 group-hover:text-[#d4a373] transition-colors line-clamp-2">
-                        {product.name}
-                      </h5>
-                    </div>
-                    <div className="mt-2 flex items-center justify-between">
-                      <span className="font-bold text-base text-gray-900 dark:text-white">
-                        ₹1,499
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <ProductCard 
+                  key={idx}
+                  id={idx.toString()}
+                  name={product.name}
+                  category={activeCategory.name}
+                  price={1499}
+                  images={[
+                    product.image,
+                    'https://images.unsplash.com/photo-1702987908200-de80baec74e4?q=80&w=600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop'
+                  ]}
+                />
               ))}
             </div>
 
-            <button className="w-full mt-8 md:hidden flex items-center justify-center gap-2 py-3 rounded-xl bg-gray-100 dark:bg-[#333] text-gray-900 dark:text-white font-semibold text-sm hover:bg-gray-200 dark:hover:bg-[#444] transition-colors">
+            <button className="w-full mt-8 md:hidden flex items-center justify-center gap-2 py-3 rounded-xl bg-white border border-black/10 dark:bg-[#333] dark:border-transparent text-black dark:text-white font-semibold text-sm hover:bg-gray-50 dark:hover:bg-[#444] transition-colors">
               View All {activeCategory.name} <ChevronRight className="w-4 h-4" />
             </button>
           </div>

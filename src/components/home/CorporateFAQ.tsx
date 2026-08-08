@@ -76,15 +76,15 @@ export default function CorporateFAQ() {
   };
 
   return (
-    <section className="py-12 lg:py-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-500 border-t border-gray-100 dark:border-white/5 overflow-hidden">
+    <section className="py-12 lg:py-16 bg-[#fcfbf9] dark:bg-[#0a0a0a] transition-colors duration-500 border-t border-black/10 dark:border-white/5 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 xl:px-16">
         
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white leading-[1.1] tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-white leading-[1.1] tracking-tight mb-3">
             Corporate Knowledge <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4a373] to-[#e3c19e]">Base.</span>
           </h2>
-          <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 font-light">
+          <p className="text-xs md:text-sm text-gray-800 dark:text-gray-400 font-light">
             Comprehensive details on our global manufacturing protocols, bulk logistics, and OEM private label capabilities.
           </p>
         </div>
@@ -98,8 +98,8 @@ export default function CorporateFAQ() {
                 onClick={() => { setActiveTab(tab.name); setOpenId(null); }}
                 className={`snap-start shrink-0 flex items-center space-x-1.5 px-4 py-2 rounded-full text-[10px] font-bold tracking-wider uppercase transition-all duration-300 border ${
                   activeTab === tab.name 
-                    ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white shadow-sm' 
-                    : 'bg-transparent text-gray-600 dark:text-gray-400 border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/30'
+                    ? 'bg-black dark:bg-white text-white dark:text-gray-900 border-black dark:border-white shadow-sm' 
+                    : 'bg-transparent text-gray-800 dark:text-gray-400 border-black/20 dark:border-white/10 hover:border-black/40 dark:hover:border-white/30'
                 }`}
               >
                 <tab.icon className="w-3 h-3" />
@@ -122,10 +122,10 @@ export default function CorporateFAQ() {
                 return (
                   <div 
                     key={faq.id}
-                    className={`bg-gray-50 dark:bg-[#111] rounded-xl overflow-hidden transition-all duration-300 border ${
+                    className={`bg-white dark:bg-[#111] rounded-xl overflow-hidden transition-all duration-300 border ${
                       isOpen 
                         ? 'border-[#d4a373] shadow-[0_0_15px_rgba(212,163,115,0.08)] dark:shadow-[0_0_20px_rgba(212,163,115,0.12)]' 
-                        : 'border-gray-200 dark:border-white/5 hover:border-[#d4a373]/40'
+                        : 'border-black/10 dark:border-white/5 hover:border-[#d4a373]/40'
                     }`}
                   >
                     <button 
@@ -134,18 +134,18 @@ export default function CorporateFAQ() {
                     >
                       <div className="flex items-center space-x-3 pr-4">
                         <div className={`shrink-0 w-6 h-6 rounded flex items-center justify-center text-[9px] font-black transition-colors ${
-                          isOpen ? 'bg-[#d4a373] text-white' : 'bg-gray-200 dark:bg-white/10 text-gray-500 dark:text-gray-400 group-hover:bg-[#d4a373]/20 group-hover:text-[#d4a373]'
+                          isOpen ? 'bg-[#d4a373] text-white' : 'bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-gray-400 group-hover:bg-[#d4a373]/20 group-hover:text-[#d4a373]'
                         }`}>
                           {num}
                         </div>
-                        <h4 className={`text-xs md:text-sm font-bold transition-colors ${isOpen ? 'text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-300'}`}>
+                        <h4 className={`text-xs md:text-sm font-bold transition-colors ${isOpen ? 'text-black dark:text-white' : 'text-gray-800 dark:text-gray-300'}`}>
                           {faq.question}
                         </h4>
                       </div>
                       <div className={`shrink-0 w-6 h-6 rounded-full border flex items-center justify-center transition-colors ${
                         isOpen 
                           ? 'border-[#d4a373] bg-[#d4a373]/10 text-[#d4a373]' 
-                          : 'border-gray-200 dark:border-white/10 text-gray-400 dark:text-gray-500 group-hover:border-[#d4a373]/50 group-hover:text-[#d4a373]'
+                          : 'border-black/10 dark:border-white/10 text-gray-800 dark:text-gray-500 group-hover:border-[#d4a373]/50 group-hover:text-[#d4a373]'
                       }`}>
                         {isOpen ? <Minus className="w-3 h-3" /> : <Plus className="w-3 h-3" />}
                       </div>
@@ -157,7 +157,7 @@ export default function CorporateFAQ() {
                       }`}
                     >
                       <div className="px-4 pb-4 lg:px-5 lg:pb-5 pt-0 pl-[3.25rem]">
-                        <p className="text-[11px] sm:text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-light">
+                        <p className="text-[11px] sm:text-xs text-gray-800 dark:text-gray-400 leading-relaxed font-light">
                           {faq.answer}
                         </p>
                       </div>
@@ -173,7 +173,7 @@ export default function CorporateFAQ() {
           </div>
 
           {/* Right: Concierge Card */}
-          <div className="lg:col-span-4 bg-[#0a0a0a] rounded-2xl p-6 lg:p-8 border border-white/10 relative overflow-hidden group shadow-xl">
+          <div className="lg:col-span-4 bg-[#111] dark:bg-[#0a0a0a] rounded-2xl p-6 lg:p-8 border border-transparent dark:border-white/10 relative overflow-hidden group shadow-xl">
             {/* Ambient Corner Glow */}
             <div className="absolute -top-20 -right-20 w-56 h-56 bg-[#d4a373] opacity-[0.05] group-hover:opacity-[0.1] blur-[50px] rounded-full transition-opacity duration-700 pointer-events-none"></div>
             

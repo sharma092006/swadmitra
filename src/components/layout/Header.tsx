@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Search,
   ShoppingBag,
@@ -48,11 +49,21 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: 'Shop', hasDropdown: true },
-    { name: 'Products', hasDropdown: false },
-    { name: 'Our Story', hasDropdown: false },
-    { name: 'Quality', hasDropdown: false },
-    { name: 'Recipes', hasDropdown: false },
+    { 
+      name: 'Shop', 
+      path: '/shop',
+      hasDropdown: true,
+      subLinks: [
+        { name: 'Products', path: '/shop' },
+        { name: 'Single Product', path: '/shop/product/1' },
+        { name: 'Cart', path: '/cart' },
+        { name: 'Checkout', path: '/checkout' }
+      ]
+    },
+    { name: 'Products', path: '/products' },
+    { name: 'Services', path: '/services' },
+    { name: 'Our Story', path: '/our-story' },
+    { name: 'Quality', path: '/#quality' },
   ];
 
   return (
@@ -105,7 +116,7 @@ export default function Header() {
 
       {/* Main Navigation - Floating Boxy Style */}
       <div className={`px-4 sm:px-6 md:px-8 xl:px-16 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
-        <div className={`mx-auto max-w-[1400px] flex items-center justify-between bg-white/95 dark:bg-[#1a1a1a]/95 backdrop-blur-md rounded-2xl md:rounded-[2rem] px-4 md:px-8 py-3 transition-all duration-500 border border-gray-100 dark:border-white/10 ${isScrolled
+        <div className={`mx-auto max-w-[1400px] flex items-center justify-between bg-white/95 dark:bg-[#111]/95 backdrop-blur-md rounded-none px-4 md:px-8 py-3 transition-all duration-500 border border-black/10 dark:border-white/10 ${isScrolled
           ? 'shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-[0_8px_30px_rgba(255,255,255,0.03)] translate-y-0'
           : 'shadow-[0_4px_20px_rgb(0,0,0,0.04)] dark:shadow-none translate-y-2'
           }`}>
@@ -118,41 +129,58 @@ export default function Header() {
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
-            <a href="/" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <span className="text-2xl md:text-3xl font-serif font-bold text-[#2c1e16] dark:text-[#f4ebd0] tracking-tight whitespace-nowrap">
                 Swadmitra
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Center: Desktop Links */}
           <nav className="hidden md:flex flex-1 items-center justify-center space-x-8 px-8">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={`#${link.name.toLowerCase().replace(' ', '-')}`}
-                className="group flex items-center space-x-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-[#7b2c2c] dark:hover:text-[#d4a373] transition-colors duration-300"
-              >
-                <span>{link.name}</span>
-                {link.hasDropdown && (
-                  <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform duration-300" />
+              <div key={link.name} className="relative group/navitem">
+                <Link
+                  to={link.path}
+                  className={`flex items-center space-x-1 text-[13px] font-bold uppercase tracking-[0.15em] transition-colors duration-300 py-4 ${link.name === 'Shop' ? 'text-[#ff4500] dark:text-[#ff4500]' : 'text-black dark:text-gray-200 hover:text-[#d4a373] dark:hover:text-[#d4a373]'}`}
+                >
+                  <span>{link.name}</span>
+                  {link.hasDropdown && (
+                    <ChevronDown className="w-4 h-4 opacity-50 group-hover/navitem:rotate-180 transition-transform duration-300" />
+                  )}
+                </Link>
+
+                {link.hasDropdown && link.subLinks && (
+                  <div className="absolute top-[100%] left-0 mt-0 opacity-0 invisible group-hover/navitem:opacity-100 group-hover/navitem:visible transition-all duration-300 w-[240px] bg-white shadow-[0_20px_40px_rgba(0,0,0,0.1)] border-t-[3px] border-[#ff4500] z-50">
+                    <div className="flex flex-col py-4">
+                      {link.subLinks.map((sublink) => (
+                        <Link 
+                          key={sublink.name} 
+                          to={sublink.path}
+                          className="px-6 py-3 text-[14px] font-medium text-[#111] hover:text-[#ff4500] hover:bg-gray-50 transition-colors"
+                        >
+                          {sublink.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 )}
-              </a>
+              </div>
             ))}
           </nav>
 
           {/* Right: Actions */}
-          <div className="flex items-center space-x-4 md:space-x-5 md:pl-4 md:border-l border-gray-200 dark:border-gray-700">
-            <button className="text-gray-700 dark:text-gray-200 hover:text-[#7b2c2c] dark:hover:text-[#d4a373] transition-colors duration-300">
+          <div className="flex items-center space-x-4 md:space-x-5 md:pl-4 md:border-l border-black/10 dark:border-gray-700">
+            <button className="text-gray-900 dark:text-gray-200 hover:text-[#7b2c2c] dark:hover:text-[#d4a373] transition-colors duration-300">
               <Search className="w-5 h-5" />
             </button>
-            <button className="hidden md:block text-gray-700 dark:text-gray-200 hover:text-[#7b2c2c] dark:hover:text-[#d4a373] transition-colors duration-300">
+            <button className="hidden md:block text-gray-900 dark:text-gray-200 hover:text-[#7b2c2c] dark:hover:text-[#d4a373] transition-colors duration-300">
               <User className="w-5 h-5" />
             </button>
-            <button className="hidden md:block text-gray-700 dark:text-gray-200 hover:text-[#7b2c2c] dark:hover:text-[#d4a373] transition-colors duration-300 relative group">
+            <button className="hidden md:block text-gray-900 dark:text-gray-200 hover:text-[#7b2c2c] dark:hover:text-[#d4a373] transition-colors duration-300 relative group">
               <Heart className="w-5 h-5" />
             </button>
-            <button className="text-gray-700 dark:text-gray-200 hover:text-[#7b2c2c] dark:hover:text-[#d4a373] transition-colors duration-300 relative group flex items-center space-x-2">
+            <button className="text-gray-900 dark:text-gray-200 hover:text-[#7b2c2c] dark:hover:text-[#d4a373] transition-colors duration-300 relative group flex items-center space-x-2">
               <div className="relative">
                 <ShoppingBag className="w-5 h-5" />
                 <span className="absolute -top-1.5 -right-2 bg-[#d4a373] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[16px] text-center">
@@ -172,20 +200,21 @@ export default function Header() {
       <div className={`absolute top-full left-0 right-0 bg-white dark:bg-[#1a1a1a] shadow-xl transition-all duration-300 origin-top overflow-hidden ${mobileMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'}`}>
         <div className="px-6 py-4 flex flex-col space-y-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={`#${link.name.toLowerCase().replace(' ', '-')}`}
-              className="text-base font-medium text-gray-800 dark:text-gray-200 pb-3 border-b border-gray-100 dark:border-gray-800"
+              to={link.path}
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-medium text-black dark:text-gray-200 pb-3 border-b border-black/10 dark:border-gray-800"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           <div className="pt-2 flex flex-col space-y-4">
-            <a href="#account" className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
+            <a href="#account" className="flex items-center space-x-3 text-gray-900 dark:text-gray-400">
               <User className="w-5 h-5" />
               <span>My Account</span>
             </a>
-            <a href="#wishlist" className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
+            <a href="#wishlist" className="flex items-center space-x-3 text-gray-900 dark:text-gray-400">
               <Heart className="w-5 h-5" />
               <span>Wishlist</span>
             </a>

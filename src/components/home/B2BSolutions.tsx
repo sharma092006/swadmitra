@@ -32,17 +32,17 @@ export default function B2BSolutions() {
   ];
 
   return (
-    <section id="b2b-solutions" className="py-20 lg:py-32 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
+    <section id="b2b-solutions" className="py-12 lg:py-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header - Minimalist & High-End */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 lg:mb-20">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-8 lg:mb-12">
           <div className="max-w-2xl">
-            <h2 className="text-[10px] sm:text-xs font-bold tracking-[0.25em] text-[#d4a373] uppercase mb-4 flex items-center">
-              <span className="w-8 h-[1px] bg-[#d4a373] mr-4"></span>
+            <h2 className="text-[10px] font-bold tracking-[0.25em] text-[#d4a373] uppercase mb-3 flex items-center">
+              <span className="w-6 h-[1px] bg-[#d4a373] mr-3"></span>
               Enterprise Manufacturing
             </h2>
-            <h3 className="text-3xl md:text-5xl font-light text-gray-900 dark:text-white leading-[1.2] tracking-tight">
+            <h3 className="text-2xl md:text-4xl font-light text-gray-900 dark:text-white leading-[1.2] tracking-tight">
               Scale your brand with <br/>
               <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#8b3d3d] to-[#d4a373] dark:from-[#d4a373] dark:to-[#e3c19e]">
                 World-Class Expertise.
@@ -58,10 +58,10 @@ export default function B2BSolutions() {
         </div>
 
         {/* Interactive Split Layout - Ultra Compact & Clean */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           
           {/* Left: Dynamic Image Display */}
-          <div className="lg:col-span-7 h-[400px] sm:h-[500px] lg:h-[600px] relative rounded-[2rem] overflow-hidden bg-gray-100 dark:bg-[#111]">
+          <div className="lg:col-span-7 h-[300px] sm:h-[400px] lg:h-[450px] relative rounded-[1.5rem] overflow-hidden bg-gray-100 dark:bg-[#111]">
             {solutions.map((solution, idx) => (
               <div 
                 key={idx}
@@ -79,58 +79,58 @@ export default function B2BSolutions() {
             ))}
             
             {/* Quick Stats Overlay on Image */}
-            <div className="absolute bottom-6 left-6 right-6 z-20 grid grid-cols-3 gap-2 bg-white/90 dark:bg-[#111]/90 backdrop-blur-md p-4 rounded-2xl border border-white/20 dark:border-white/5 shadow-2xl">
+            <div className="absolute bottom-4 left-4 right-4 z-20 grid grid-cols-3 gap-2 bg-white/90 dark:bg-[#111]/90 backdrop-blur-md p-3 rounded-xl border border-white/20 dark:border-white/5 shadow-xl">
               <div className="text-center border-r border-gray-200 dark:border-white/10">
-                <div className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">50k+</div>
-                <div className="text-[9px] sm:text-[10px] font-semibold text-gray-500 uppercase tracking-widest mt-1">Tons / Year</div>
+                <div className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">50k+</div>
+                <div className="text-[8px] sm:text-[9px] font-semibold text-gray-500 uppercase tracking-widest mt-0.5">Tons / Year</div>
               </div>
               <div className="text-center border-r border-gray-200 dark:border-white/10">
-                <div className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">ISO</div>
-                <div className="text-[9px] sm:text-[10px] font-semibold text-gray-500 uppercase tracking-widest mt-1">Certified</div>
+                <div className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">ISO</div>
+                <div className="text-[8px] sm:text-[9px] font-semibold text-gray-500 uppercase tracking-widest mt-0.5">Certified</div>
               </div>
               <div className="text-center">
-                <div className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">500+</div>
-                <div className="text-[9px] sm:text-[10px] font-semibold text-gray-500 uppercase tracking-widest mt-1">Partners</div>
+                <div className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">500+</div>
+                <div className="text-[8px] sm:text-[9px] font-semibold text-gray-500 uppercase tracking-widest mt-0.5">Partners</div>
               </div>
             </div>
           </div>
 
           {/* Right: Interactive Tabs */}
-          <div className="lg:col-span-5 flex flex-col space-y-4 lg:space-y-6">
+          <div className="lg:col-span-5 flex flex-col space-y-2 lg:space-y-3">
             {solutions.map((solution, idx) => {
               const isActive = activeSolution === idx;
               return (
                 <div 
                   key={idx}
                   onClick={() => setActiveSolution(idx)}
-                  className={`group cursor-pointer p-6 rounded-2xl transition-all duration-300 border ${
+                  className={`group cursor-pointer p-3 lg:p-4 rounded-xl transition-all duration-300 ${
                     isActive 
-                      ? 'bg-white dark:bg-[#111] border-gray-200 dark:border-white/10 shadow-lg shadow-gray-200/50 dark:shadow-none' 
-                      : 'bg-transparent border-transparent hover:bg-gray-50 dark:hover:bg-white/5'
+                      ? 'bg-gray-50 dark:bg-white/5' 
+                      : 'bg-transparent hover:bg-gray-50/50 dark:hover:bg-white/5'
                   }`}
                 >
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center space-x-4">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 ${
-                        isActive ? 'bg-[#d4a373]/10 text-[#d4a373]' : 'bg-gray-100 dark:bg-white/5 text-gray-400 dark:text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white'
+                  <div className="flex items-center justify-between mb-1 lg:mb-2">
+                    <div className="flex items-center space-x-3">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${
+                        isActive ? 'bg-[#d4a373]/10 text-[#d4a373]' : 'bg-transparent text-gray-400 dark:text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white'
                       }`}>
                         <solution.icon className="w-4 h-4" />
                       </div>
-                      <h4 className={`text-lg md:text-xl font-semibold transition-colors duration-300 ${
+                      <h4 className={`text-sm md:text-base font-medium transition-colors duration-300 ${
                         isActive ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
                       }`}>
                         {solution.title}
                       </h4>
                     </div>
-                    <ChevronRight className={`w-5 h-5 transition-all duration-300 ${
-                      isActive ? 'text-[#d4a373] opacity-100 translate-x-0' : 'text-gray-300 dark:text-gray-600 opacity-0 -translate-x-4 group-hover:opacity-100'
+                    <ChevronRight className={`w-4 h-4 transition-all duration-300 ${
+                      isActive ? 'text-[#d4a373] opacity-100 translate-x-0' : 'text-gray-300 dark:text-gray-600 opacity-0 -translate-x-2 group-hover:opacity-100'
                     }`} />
                   </div>
                   
                   <div className={`grid transition-all duration-500 ease-in-out overflow-hidden ${
-                    isActive ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'
+                    isActive ? 'grid-rows-[1fr] opacity-100 mt-1 lg:mt-2' : 'grid-rows-[0fr] opacity-0'
                   }`}>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed pl-14 overflow-hidden">
+                    <p className="text-gray-600 dark:text-gray-400 text-xs md:text-sm leading-relaxed pl-11 overflow-hidden">
                       {solution.description}
                     </p>
                   </div>

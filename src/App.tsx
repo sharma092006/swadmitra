@@ -1,34 +1,33 @@
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
-import Hero from './components/home/Hero'
-import TeaCollection from './components/home/TeaCollection'
-import B2BSolutions from './components/home/B2BSolutions'
-import B2BAdvantage from './components/home/B2BAdvantage'
-import PartnershipJourney from './components/home/PartnershipJourney'
-import BestSelling from './components/home/BestSelling'
-import CorporateFAQ from './components/home/CorporateFAQ'
-import B2BConnect from './components/home/B2BConnect'
-import SampleRequestCTA from './components/home/SampleRequestCTA'
+import Home from './pages/Home'
+import Services from './pages/Services'
+import Shop from './pages/Shop'
+import Products from './pages/Products'
+import OurStory from './pages/OurStory'
+import ProductDetail from './pages/ProductDetail'
+import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#fcfbf9] dark:bg-[#121212] transition-colors duration-300">
+    <div className="min-h-screen bg-[#fcfbf9] dark:bg-[#121212] transition-colors duration-300 flex flex-col">
       <Header />
-      
-      {/* Hero Section */}
-      <Hero />
 
-      <main>
-        <TeaCollection />
-        <B2BSolutions />
-        <B2BAdvantage />
-        <PartnershipJourney />
-        <BestSelling />
-        <CorporateFAQ />
-        <B2BConnect />
-        <SampleRequestCTA />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/our-story" element={<OurStory />} />
+          <Route path="/shop/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
       </main>
-      
+
       <Footer />
     </div>
   )
