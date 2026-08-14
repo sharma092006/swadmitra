@@ -2,16 +2,22 @@ import { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ProductCard from '../shop/ProductCard';
 
+import img1 from '../../assets/assam_ctc_tea_1786083099298.png';
+import img2 from '../../assets/darjeeling_first_flush_1786083109823.png';
+import img3 from '../../assets/masala_chai_1786083121309.png';
+import img4 from '../../assets/earl_grey_1786083131352.png';
+import img5 from '../../assets/bulk_tea_supply_1786082123663.png';
+
 export default function BestSelling() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
 
   const mockImages = [
-    'https://images.unsplash.com/photo-1702987908200-de80baec74e4?q=80&w=600&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1767721887917-ad186b3f5f2d?q=80&w=600&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1572232189109-8462e31c1202?q=80&w=600&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1651608154985-dcc87b27a63e?q=80&w=600&auto=format&fit=crop'
+    img1,
+    img2,
+    img3,
+    img4,
+    img5
   ];
 
   const products = [

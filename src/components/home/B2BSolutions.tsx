@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { Factory, PackageCheck, Globe, Leaf, ArrowRight, ChevronRight } from 'lucide-react';
 
+import img1 from '../../assets/bulk_tea_supply_1786082123663.png';
+import img2 from '../../assets/darjeeling_first_flush_1786083109823.png';
+import img3 from '../../assets/masala_chai_1786083121309.png';
+import img4 from '../../assets/earl_grey_1786083131352.png';
+
 export default function B2BSolutions() {
   const [activeSolution, setActiveSolution] = useState(0);
 
@@ -9,25 +14,25 @@ export default function B2BSolutions() {
       title: 'Bulk Sourcing & Manufacturing',
       description: 'End-to-end processing of premium tea grades to supply global distributors and FMCG brands at immense scale with uncompromising quality.',
       icon: Factory,
-      image: 'https://images.unsplash.com/photo-1651608154985-dcc87b27a63e?q=80&w=1200&auto=format&fit=crop',
+      image: img1,
     },
     {
       title: 'Private Label & OEM',
       description: 'Complete turn-key solutions. We blend, design, pack, and ship premium teas entirely under your own corporate brand identity.',
       icon: PackageCheck,
-      image: 'https://images.unsplash.com/photo-1702987908200-de80baec74e4?q=80&w=1200&auto=format&fit=crop',
+      image: img2,
     },
     {
       title: 'Master Custom Blending',
       description: 'Collaborate with our elite master tasters to develop proprietary, signature flavor profiles exclusive to your target market.',
       icon: Leaf,
-      image: 'https://images.unsplash.com/photo-1765809411613-9870f2f2d459?q=80&w=1200&auto=format&fit=crop',
+      image: img3,
     },
     {
       title: 'Global Export Logistics',
       description: 'Reliable, fully compliant international shipping and supply chain management ensuring your bulk orders arrive factory-fresh.',
       icon: Globe,
-      image: 'https://images.unsplash.com/photo-1644335471325-52e2d44fca64?q=80&w=1200&auto=format&fit=crop',
+      image: img4,
     }
   ];
 

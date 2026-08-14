@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { Send, Calendar, ArrowRight } from 'lucide-react';
 
+import img1 from '../../assets/assam_ctc_tea_1786083099298.png';
+import img2 from '../../assets/darjeeling_first_flush_1786083109823.png';
+import img3 from '../../assets/masala_chai_1786083121309.png';
+import img4 from '../../assets/earl_grey_1786083131352.png';
+
 export default function B2BConnect() {
   const [activeFilter, setActiveFilter] = useState('ALL');
   
@@ -12,35 +17,35 @@ export default function B2BConnect() {
       category: 'MANUFACTURING',
       date: 'AUG 12, 2026',
       title: 'The Future of High-Volume CTC Production: Automation & Quality',
-      image: 'https://images.unsplash.com/photo-1572232189109-8462e31c1202?q=80&w=600&auto=format&fit=crop'
+      image: img1
     },
     {
       id: 2,
       category: 'PRIVATE LABEL',
       date: 'JUL 24, 2026',
       title: 'Building a Luxury Tea Brand: White Label Strategies for 2027',
-      image: 'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop'
+      image: img2
     },
     {
       id: 3,
       category: 'SUSTAINABILITY',
       date: 'JUN 15, 2026',
       title: 'Ethical Sourcing: The Blueprint for Modern FMCG Supply Chains',
-      image: 'https://images.unsplash.com/photo-1651608154985-dcc87b27a63e?q=80&w=600&auto=format&fit=crop'
+      image: img3
     },
     {
       id: 4,
       category: 'HARVEST REPORTS',
       date: 'MAY 02, 2026',
       title: 'Q2 Global Harvest Analysis: Assam & Darjeeling Yields',
-      image: 'https://images.unsplash.com/photo-1572232189109-8462e31c1202?q=80&w=600&auto=format&fit=crop'
+      image: img4
     },
     {
       id: 5,
       category: 'MANUFACTURING',
       date: 'APR 18, 2026',
       title: 'Optimizing Oxidation: Data-Driven Approaches for CTC Black Tea',
-      image: 'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop'
+      image: img2
     }
   ];
 

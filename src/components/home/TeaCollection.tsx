@@ -2,22 +2,35 @@ import { useState } from 'react';
 import { ArrowRight, ChevronRight, Leaf } from 'lucide-react';
 import ProductCard from '../shop/ProductCard';
 
+import img1 from '../../assets/assam_ctc_tea_1786083099298.png';
+import img2 from '../../assets/darjeeling_first_flush_1786083109823.png';
+import img3 from '../../assets/masala_chai_1786083121309.png';
+import img4 from '../../assets/earl_grey_1786083131352.png';
+
+const getImg = (name: string) => {
+  const n = name.toLowerCase();
+  if (n.includes('ctc') || n.includes('assam')) return img1;
+  if (n.includes('masala') || n.includes('spice') || n.includes('chai')) return img3;
+  if (n.includes('earl') || n.includes('grey')) return img4;
+  return img2; // Default premium tea image
+};
+
 const teaCategories = [
   {
     id: 'black-tea',
     name: 'Black Tea',
     description: 'Robust, full-bodied flavors with a rich, malty finish. Perfect for your morning awakening.',
     themeColor: 'from-amber-900/80 to-stone-900/90',
-    image: 'https://images.unsplash.com/photo-1651608154985-dcc87b27a63e?q=80&w=600&auto=format&fit=crop',
+    image: img1,
     products: [
-      { name: 'Assam Black Tea', rating: 4.8, reviews: 124 , image: 'https://images.unsplash.com/photo-1651608154985-dcc87b27a63e?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Darjeeling Black Tea', rating: 4.9, reviews: 89 , image: 'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Nilgiri Black Tea', rating: 4.7, reviews: 56 , image: 'https://images.unsplash.com/photo-1765809411613-9870f2f2d459?q=80&w=600&auto=format&fit=crop' },
-      { name: 'CTC Tea', rating: 4.6, reviews: 210 , image: 'https://images.unsplash.com/photo-1758390285674-f1d55b9d1312?q=80&w=600&auto=format&fit=crop' },
-      { name: 'English Breakfast Tea', rating: 4.8, reviews: 156 , image: 'https://images.unsplash.com/photo-1723142856505-5fe883fa11fe?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Earl Grey Tea', rating: 4.9, reviews: 342 , image: 'https://images.unsplash.com/photo-1701544872167-7f5ee73cb435?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Masala Black Tea', rating: 4.7, reviews: 118 , image: 'https://images.unsplash.com/photo-1559038297-5b37efcd59d4?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Single Origin Black Tea', rating: 5.0, reviews: 45 , image: 'https://images.unsplash.com/photo-1767721887917-ad186b3f5f2d?q=80&w=600&auto=format&fit=crop' },
+      { name: 'Assam Black Tea', rating: 4.8, reviews: 124, image: getImg('Assam Black Tea') },
+      { name: 'Darjeeling Black Tea', rating: 4.9, reviews: 89, image: getImg('Darjeeling Black Tea') },
+      { name: 'Nilgiri Black Tea', rating: 4.7, reviews: 56, image: getImg('Nilgiri Black Tea') },
+      { name: 'CTC Tea', rating: 4.6, reviews: 210, image: getImg('CTC Tea') },
+      { name: 'English Breakfast Tea', rating: 4.8, reviews: 156, image: getImg('English Breakfast Tea') },
+      { name: 'Earl Grey Tea', rating: 4.9, reviews: 342, image: getImg('Earl Grey Tea') },
+      { name: 'Masala Black Tea', rating: 4.7, reviews: 118, image: getImg('Masala Black Tea') },
+      { name: 'Single Origin Black Tea', rating: 5.0, reviews: 45, image: getImg('Single Origin Black Tea') },
     ]
   },
   {
@@ -25,16 +38,16 @@ const teaCategories = [
     name: 'Green Tea',
     description: 'Delicate, fresh, and packed with antioxidants. A revitalizing journey for body and mind.',
     themeColor: 'from-emerald-800/80 to-teal-900/90',
-    image: 'https://images.unsplash.com/photo-1763617702099-d956f3fd8324?q=80&w=600&auto=format&fit=crop',
+    image: img2,
     products: [
-      { name: 'Pure Green Tea', rating: 4.7, reviews: 88 , image: 'https://images.unsplash.com/photo-1763617702099-d956f3fd8324?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Matcha Green Tea', rating: 5.0, reviews: 412 , image: 'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Jasmine Green Tea', rating: 4.8, reviews: 156 , image: 'https://images.unsplash.com/photo-1765809411613-9870f2f2d459?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Moroccan Mint Green Tea', rating: 4.9, reviews: 204 , image: 'https://images.unsplash.com/photo-1758390285674-f1d55b9d1312?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Sencha Green Tea', rating: 4.8, reviews: 93 , image: 'https://images.unsplash.com/photo-1723142856505-5fe883fa11fe?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Gunpowder Green Tea', rating: 4.6, reviews: 75 , image: 'https://images.unsplash.com/photo-1701544872167-7f5ee73cb435?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Tulsi Green Tea', rating: 4.7, reviews: 132 , image: 'https://images.unsplash.com/photo-1559038297-5b37efcd59d4?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Honey Lemon Green Tea', rating: 4.8, reviews: 267 , image: 'https://images.unsplash.com/photo-1767721887917-ad186b3f5f2d?q=80&w=600&auto=format&fit=crop' },
+      { name: 'Pure Green Tea', rating: 4.7, reviews: 88, image: getImg('Pure Green Tea') },
+      { name: 'Matcha Green Tea', rating: 5.0, reviews: 412, image: getImg('Matcha Green Tea') },
+      { name: 'Jasmine Green Tea', rating: 4.8, reviews: 156, image: getImg('Jasmine Green Tea') },
+      { name: 'Moroccan Mint Green Tea', rating: 4.9, reviews: 204, image: getImg('Moroccan Mint Green Tea') },
+      { name: 'Sencha Green Tea', rating: 4.8, reviews: 93, image: getImg('Sencha Green Tea') },
+      { name: 'Gunpowder Green Tea', rating: 4.6, reviews: 75, image: getImg('Gunpowder Green Tea') },
+      { name: 'Tulsi Green Tea', rating: 4.7, reviews: 132, image: getImg('Tulsi Green Tea') },
+      { name: 'Honey Lemon Green Tea', rating: 4.8, reviews: 267, image: getImg('Honey Lemon Green Tea') },
     ]
   },
   {
@@ -42,16 +55,16 @@ const teaCategories = [
     name: 'Herbal Tea',
     description: 'Caffeine-free botanical blends to soothe, calm, and restore your natural balance.',
     themeColor: 'from-orange-800/80 to-red-900/90',
-    image: 'https://images.unsplash.com/photo-1702987908200-de80baec74e4?q=80&w=600&auto=format&fit=crop',
+    image: img3,
     products: [
-      { name: 'Chamomile Tea', rating: 4.9, reviews: 310 , image: 'https://images.unsplash.com/photo-1702987908200-de80baec74e4?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Peppermint Tea', rating: 4.8, reviews: 185 , image: 'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Hibiscus Tea', rating: 4.7, reviews: 142 , image: 'https://images.unsplash.com/photo-1765809411613-9870f2f2d459?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Lemongrass Tea', rating: 4.6, reviews: 98 , image: 'https://images.unsplash.com/photo-1758390285674-f1d55b9d1312?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Lavender Tea', rating: 4.9, reviews: 215 , image: 'https://images.unsplash.com/photo-1723142856505-5fe883fa11fe?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Rose Tea', rating: 4.8, reviews: 167 , image: 'https://images.unsplash.com/photo-1701544872167-7f5ee73cb435?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Detox Herbal Tea', rating: 4.7, reviews: 289 , image: 'https://images.unsplash.com/photo-1559038297-5b37efcd59d4?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Relaxation Tea', rating: 4.8, reviews: 154 , image: 'https://images.unsplash.com/photo-1767721887917-ad186b3f5f2d?q=80&w=600&auto=format&fit=crop' },
+      { name: 'Chamomile Tea', rating: 4.9, reviews: 310, image: getImg('Chamomile Tea') },
+      { name: 'Peppermint Tea', rating: 4.8, reviews: 185, image: getImg('Peppermint Tea') },
+      { name: 'Hibiscus Tea', rating: 4.7, reviews: 142, image: getImg('Hibiscus Tea') },
+      { name: 'Lemongrass Tea', rating: 4.6, reviews: 98, image: getImg('Lemongrass Tea') },
+      { name: 'Lavender Tea', rating: 4.9, reviews: 215, image: getImg('Lavender Tea') },
+      { name: 'Rose Tea', rating: 4.8, reviews: 167, image: getImg('Rose Tea') },
+      { name: 'Detox Herbal Tea', rating: 4.7, reviews: 289, image: getImg('Detox Herbal Tea') },
+      { name: 'Relaxation Tea', rating: 4.8, reviews: 154, image: getImg('Relaxation Tea') },
     ]
   },
   {
@@ -59,13 +72,13 @@ const teaCategories = [
     name: 'White Tea',
     description: 'The purest and most delicate tea leaves, subtly sweet and elegantly refined.',
     themeColor: 'from-stone-400/80 to-stone-600/90',
-    image: 'https://images.unsplash.com/photo-1651608152231-dbee4d57e874?q=80&w=600&auto=format&fit=crop',
+    image: img2,
     products: [
-      { name: 'Silver Needle White Tea', rating: 5.0, reviews: 128 , image: 'https://images.unsplash.com/photo-1651608152231-dbee4d57e874?q=80&w=600&auto=format&fit=crop' },
-      { name: 'White Peony Tea', rating: 4.8, reviews: 76 , image: 'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Organic White Tea', rating: 4.7, reviews: 54 , image: 'https://images.unsplash.com/photo-1765809411613-9870f2f2d459?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Premium White Tea', rating: 4.9, reviews: 92 , image: 'https://images.unsplash.com/photo-1758390285674-f1d55b9d1312?q=80&w=600&auto=format&fit=crop' },
-      { name: 'White Darjeeling Tea', rating: 4.8, reviews: 110 , image: 'https://images.unsplash.com/photo-1723142856505-5fe883fa11fe?q=80&w=600&auto=format&fit=crop' },
+      { name: 'Silver Needle White Tea', rating: 5.0, reviews: 128, image: getImg('Silver Needle White Tea') },
+      { name: 'White Peony Tea', rating: 4.8, reviews: 76, image: getImg('White Peony Tea') },
+      { name: 'Organic White Tea', rating: 4.7, reviews: 54, image: getImg('Organic White Tea') },
+      { name: 'Premium White Tea', rating: 4.9, reviews: 92, image: getImg('Premium White Tea') },
+      { name: 'White Darjeeling Tea', rating: 4.8, reviews: 110, image: getImg('White Darjeeling Tea') },
     ]
   },
   {
@@ -73,13 +86,13 @@ const teaCategories = [
     name: 'Oolong Tea',
     description: 'Partially oxidized for a complex flavor profile bridging green and black teas.',
     themeColor: 'from-amber-700/80 to-orange-900/90',
-    image: 'https://images.unsplash.com/photo-1708010433898-2685301f61ed?q=80&w=600&auto=format&fit=crop',
+    image: img1,
     products: [
-      { name: 'Classic Oolong Tea', rating: 4.7, reviews: 85 , image: 'https://images.unsplash.com/photo-1708010433898-2685301f61ed?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Milk Oolong Tea', rating: 4.9, reviews: 240 , image: 'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Tie Guan Yin Tea', rating: 5.0, reviews: 165 , image: 'https://images.unsplash.com/photo-1765809411613-9870f2f2d459?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Roasted Oolong Tea', rating: 4.8, reviews: 98 , image: 'https://images.unsplash.com/photo-1758390285674-f1d55b9d1312?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Premium Oolong Tea', rating: 4.9, reviews: 77 , image: 'https://images.unsplash.com/photo-1723142856505-5fe883fa11fe?q=80&w=600&auto=format&fit=crop' },
+      { name: 'Classic Oolong Tea', rating: 4.7, reviews: 85, image: getImg('Classic Oolong Tea') },
+      { name: 'Milk Oolong Tea', rating: 4.9, reviews: 240, image: getImg('Milk Oolong Tea') },
+      { name: 'Tie Guan Yin Tea', rating: 5.0, reviews: 165, image: getImg('Tie Guan Yin Tea') },
+      { name: 'Roasted Oolong Tea', rating: 4.8, reviews: 98, image: getImg('Roasted Oolong Tea') },
+      { name: 'Premium Oolong Tea', rating: 4.9, reviews: 77, image: getImg('Premium Oolong Tea') },
     ]
   },
   {
@@ -87,16 +100,16 @@ const teaCategories = [
     name: 'Flavored Tea',
     description: 'Exquisite blends infused with natural spices, fruits, and fragrant botanicals.',
     themeColor: 'from-rose-800/80 to-purple-900/90',
-    image: 'https://images.unsplash.com/photo-1572232189109-8462e31c1202?q=80&w=600&auto=format&fit=crop',
+    image: img3,
     products: [
-      { name: 'Masala Chai', rating: 4.9, reviews: 512 , image: 'https://images.unsplash.com/photo-1572232189109-8462e31c1202?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Cardamom Tea', rating: 4.8, reviews: 215 , image: 'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Saffron Tea', rating: 5.0, reviews: 145 , image: 'https://images.unsplash.com/photo-1765809411613-9870f2f2d459?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Peach Tea', rating: 4.7, reviews: 189 , image: 'https://images.unsplash.com/photo-1758390285674-f1d55b9d1312?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Apple Cinnamon Tea', rating: 4.8, reviews: 201 , image: 'https://images.unsplash.com/photo-1723142856505-5fe883fa11fe?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Orange Spice Tea', rating: 4.7, reviews: 167 , image: 'https://images.unsplash.com/photo-1701544872167-7f5ee73cb435?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Caramel Tea', rating: 4.6, reviews: 134 , image: 'https://images.unsplash.com/photo-1559038297-5b37efcd59d4?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Chocolate Tea', rating: 4.5, reviews: 98 , image: 'https://images.unsplash.com/photo-1767721887917-ad186b3f5f2d?q=80&w=600&auto=format&fit=crop' },
+      { name: 'Masala Chai', rating: 4.9, reviews: 512, image: getImg('Masala Chai') },
+      { name: 'Cardamom Tea', rating: 4.8, reviews: 215, image: getImg('Cardamom Tea') },
+      { name: 'Saffron Tea', rating: 5.0, reviews: 145, image: getImg('Saffron Tea') },
+      { name: 'Peach Tea', rating: 4.7, reviews: 189, image: getImg('Peach Tea') },
+      { name: 'Apple Cinnamon Tea', rating: 4.8, reviews: 201, image: getImg('Apple Cinnamon Tea') },
+      { name: 'Orange Spice Tea', rating: 4.7, reviews: 167, image: getImg('Orange Spice Tea') },
+      { name: 'Caramel Tea', rating: 4.6, reviews: 134, image: getImg('Caramel Tea') },
+      { name: 'Chocolate Tea', rating: 4.5, reviews: 98, image: getImg('Chocolate Tea') },
     ]
   },
   {
@@ -104,16 +117,16 @@ const teaCategories = [
     name: 'Wellness Tea',
     description: 'Purposefully crafted blends to support your daily health and vitality.',
     themeColor: 'from-lime-800/80 to-green-900/90',
-    image: 'https://images.unsplash.com/photo-1668587877964-16488273b0ab?q=80&w=600&auto=format&fit=crop',
+    image: img2,
     products: [
-      { name: 'Immunity Tea', rating: 4.8, reviews: 320 , image: 'https://images.unsplash.com/photo-1668587877964-16488273b0ab?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Detox Tea', rating: 4.7, reviews: 285 , image: 'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Slim Tea', rating: 4.6, reviews: 210 , image: 'https://images.unsplash.com/photo-1765809411613-9870f2f2d459?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Digestive Tea', rating: 4.8, reviews: 195 , image: 'https://images.unsplash.com/photo-1758390285674-f1d55b9d1312?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Sleep Wellness Tea', rating: 4.9, reviews: 415 , image: 'https://images.unsplash.com/photo-1723142856505-5fe883fa11fe?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Stress Relief Tea', rating: 4.9, reviews: 378 , image: 'https://images.unsplash.com/photo-1701544872167-7f5ee73cb435?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Energy Tea', rating: 4.7, reviews: 188 , image: 'https://images.unsplash.com/photo-1559038297-5b37efcd59d4?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Diabetic Care Tea', rating: 4.8, reviews: 156 , image: 'https://images.unsplash.com/photo-1767721887917-ad186b3f5f2d?q=80&w=600&auto=format&fit=crop' },
+      { name: 'Immunity Tea', rating: 4.8, reviews: 320, image: getImg('Immunity Tea') },
+      { name: 'Detox Tea', rating: 4.7, reviews: 285, image: getImg('Detox Tea') },
+      { name: 'Slim Tea', rating: 4.6, reviews: 210, image: getImg('Slim Tea') },
+      { name: 'Digestive Tea', rating: 4.8, reviews: 195, image: getImg('Digestive Tea') },
+      { name: 'Sleep Wellness Tea', rating: 4.9, reviews: 415, image: getImg('Sleep Wellness Tea') },
+      { name: 'Stress Relief Tea', rating: 4.9, reviews: 378, image: getImg('Stress Relief Tea') },
+      { name: 'Energy Tea', rating: 4.7, reviews: 188, image: getImg('Energy Tea') },
+      { name: 'Diabetic Care Tea', rating: 4.8, reviews: 156, image: getImg('Diabetic Care Tea') },
     ]
   },
   {
@@ -121,14 +134,14 @@ const teaCategories = [
     name: 'Iced Tea',
     description: 'Refreshingly crisp and cool infusions, perfectly balanced for warm days.',
     themeColor: 'from-cyan-700/80 to-blue-900/90',
-    image: 'https://images.unsplash.com/photo-1644335471325-52e2d44fca64?q=80&w=600&auto=format&fit=crop',
+    image: img4,
     products: [
-      { name: 'Lemon Iced Tea', rating: 4.8, reviews: 245 , image: 'https://images.unsplash.com/photo-1644335471325-52e2d44fca64?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Peach Iced Tea', rating: 4.9, reviews: 312 , image: 'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Mango Iced Tea', rating: 4.8, reviews: 278 , image: 'https://images.unsplash.com/photo-1765809411613-9870f2f2d459?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Green Iced Tea', rating: 4.7, reviews: 198 , image: 'https://images.unsplash.com/photo-1758390285674-f1d55b9d1312?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Raspberry Iced Tea', rating: 4.8, reviews: 234 , image: 'https://images.unsplash.com/photo-1723142856505-5fe883fa11fe?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Mint Iced Tea', rating: 4.7, reviews: 165 , image: 'https://images.unsplash.com/photo-1701544872167-7f5ee73cb435?q=80&w=600&auto=format&fit=crop' },
+      { name: 'Lemon Iced Tea', rating: 4.8, reviews: 245, image: getImg('Lemon Iced Tea') },
+      { name: 'Peach Iced Tea', rating: 4.9, reviews: 312, image: getImg('Peach Iced Tea') },
+      { name: 'Mango Iced Tea', rating: 4.8, reviews: 278, image: getImg('Mango Iced Tea') },
+      { name: 'Green Iced Tea', rating: 4.7, reviews: 198, image: getImg('Green Iced Tea') },
+      { name: 'Raspberry Iced Tea', rating: 4.8, reviews: 234, image: getImg('Raspberry Iced Tea') },
+      { name: 'Mint Iced Tea', rating: 4.7, reviews: 165, image: getImg('Mint Iced Tea') },
     ]
   },
   {
@@ -136,14 +149,14 @@ const teaCategories = [
     name: 'Specialty Tea',
     description: 'Rare, unique, and artisanal creations for the ultimate tea connoisseur.',
     themeColor: 'from-fuchsia-800/80 to-violet-900/90',
-    image: 'https://images.unsplash.com/photo-1586965142106-83751d8f57a3?q=80&w=600&auto=format&fit=crop',
+    image: img1,
     products: [
-      { name: 'Kashmiri Kahwa', rating: 5.0, reviews: 189 , image: 'https://images.unsplash.com/photo-1586965142106-83751d8f57a3?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Blue Tea (Butterfly Pea)', rating: 4.9, reviews: 245 , image: 'https://images.unsplash.com/photo-1702987908200-de80baec74e4?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Golden Turmeric Tea', rating: 4.8, reviews: 210 , image: 'https://images.unsplash.com/photo-1572232189109-8462e31c1202?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Ayurvedic Tea', rating: 4.8, reviews: 176 , image: 'https://images.unsplash.com/photo-1765809411613-9870f2f2d459?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Smoke Tea', rating: 4.6, reviews: 88 , image: 'https://images.unsplash.com/photo-1763617702099-d956f3fd8324?q=80&w=600&auto=format&fit=crop' },
-      { name: 'Blooming Flower Tea', rating: 4.9, reviews: 312 , image: 'https://images.unsplash.com/photo-1701544872167-7f5ee73cb435?q=80&w=600&auto=format&fit=crop' },
+      { name: 'Kashmiri Kahwa', rating: 5.0, reviews: 189, image: getImg('Kashmiri Kahwa') },
+      { name: 'Blue Tea (Butterfly Pea)', rating: 4.9, reviews: 245, image: getImg('Blue Tea (Butterfly Pea)') },
+      { name: 'Golden Turmeric Tea', rating: 4.8, reviews: 210, image: getImg('Golden Turmeric Tea') },
+      { name: 'Ayurvedic Tea', rating: 4.8, reviews: 176, image: getImg('Ayurvedic Tea') },
+      { name: 'Smoke Tea', rating: 4.6, reviews: 88, image: getImg('Smoke Tea') },
+      { name: 'Blooming Flower Tea', rating: 4.9, reviews: 312, image: getImg('Blooming Flower Tea') },
     ]
   }
 ];
@@ -236,8 +249,8 @@ export default function TeaCollection() {
                   price={1499}
                   images={[
                     product.image,
-                    'https://images.unsplash.com/photo-1702987908200-de80baec74e4?q=80&w=600&auto=format&fit=crop',
-                    'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop'
+                    img1,
+                    img2
                   ]}
                 />
               ))}

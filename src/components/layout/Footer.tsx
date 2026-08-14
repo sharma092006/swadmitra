@@ -1,5 +1,6 @@
 import { Package, Building2, LifeBuoy, Globe, Mail, Leaf } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -32,11 +33,11 @@ export default function Footer() {
               <h3 className="font-semibold text-white text-sm uppercase tracking-wider">Our Services</h3>
             </div>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Bulk Tea Supply</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Private Label (OEM)</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Custom Blending</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Global Export</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Packaging Solutions</a></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Bulk Tea Supply</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Private Label (OEM)</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Custom Blending</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Global Export</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Packaging Solutions</Link></li>
             </ul>
           </div>
 
@@ -47,11 +48,11 @@ export default function Footer() {
               <h3 className="font-semibold text-white text-sm uppercase tracking-wider">Our Company</h3>
             </div>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Quality Standards</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Sustainability</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Certifications</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Careers</a></li>
+              <li><Link to="/our-story" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">About Us</Link></li>
+              <li><Link to="/quality" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Quality Standards</Link></li>
+              <li><Link to="/quality" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Sustainability</Link></li>
+              <li><Link to="/quality" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Certifications</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Careers</Link></li>
             </ul>
           </div>
 
@@ -62,11 +63,11 @@ export default function Footer() {
               <h3 className="font-semibold text-white text-sm uppercase tracking-wider">Support & Help</h3>
             </div>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Documentation</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Service Warranty</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Contact Support</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Order Tracking</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">FAQs</a></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Documentation</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Service Warranty</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Contact Support</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">Order Tracking</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-[#d4a373] text-sm transition-colors duration-300">FAQs</Link></li>
             </ul>
           </div>
 
@@ -77,16 +78,16 @@ export default function Footer() {
               <h3 className="font-semibold text-white text-sm uppercase tracking-wider">Connect With Us</h3>
             </div>
             <div className="flex items-center space-x-3 mb-8">
-              <a href="#" className="w-8 h-8 rounded-md bg-[#1a1a1a] border border-white/5 flex items-center justify-center hover:bg-[#d4a373] hover:border-[#d4a373] hover:text-gray-900 text-gray-400 transition-all duration-300">
+              <a href="https://facebook.com/swadmitra" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-md bg-[#1a1a1a] border border-white/5 flex items-center justify-center hover:bg-[#d4a373] hover:border-[#d4a373] hover:text-gray-900 text-gray-400 transition-all duration-300">
                 <FaFacebook className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 rounded-md bg-[#1a1a1a] border border-white/5 flex items-center justify-center hover:bg-[#d4a373] hover:border-[#d4a373] hover:text-gray-900 text-gray-400 transition-all duration-300">
+              <a href="https://twitter.com/swadmitra" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-md bg-[#1a1a1a] border border-white/5 flex items-center justify-center hover:bg-[#d4a373] hover:border-[#d4a373] hover:text-gray-900 text-gray-400 transition-all duration-300">
                 <FaTwitter className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 rounded-md bg-[#1a1a1a] border border-white/5 flex items-center justify-center hover:bg-[#d4a373] hover:border-[#d4a373] hover:text-gray-900 text-gray-400 transition-all duration-300">
+              <a href="https://linkedin.com/company/swadmitra" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-md bg-[#1a1a1a] border border-white/5 flex items-center justify-center hover:bg-[#d4a373] hover:border-[#d4a373] hover:text-gray-900 text-gray-400 transition-all duration-300">
                 <FaLinkedin className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 rounded-md bg-[#1a1a1a] border border-white/5 flex items-center justify-center hover:bg-[#d4a373] hover:border-[#d4a373] hover:text-gray-900 text-gray-400 transition-all duration-300">
+              <a href="https://instagram.com/swadmitra" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-md bg-[#1a1a1a] border border-white/5 flex items-center justify-center hover:bg-[#d4a373] hover:border-[#d4a373] hover:text-gray-900 text-gray-400 transition-all duration-300">
                 <FaInstagram className="w-4 h-4" />
               </a>
             </div>
@@ -108,9 +109,9 @@ export default function Footer() {
             © {new Date().getFullYear()} SwadMitra. All rights reserved.
           </p>
           <div className="flex items-center space-x-6 text-xs text-gray-500">
-            <a href="#" className="hover:text-[#d4a373] transition-colors duration-300">Privacy Policy</a>
-            <a href="#" className="hover:text-[#d4a373] transition-colors duration-300">Terms of Service</a>
-            <a href="#" className="hover:text-[#d4a373] transition-colors duration-300">Cookie Policy</a>
+            <Link to="/contact" className="hover:text-[#d4a373] transition-colors duration-300">Privacy Policy</Link>
+            <Link to="/contact" className="hover:text-[#d4a373] transition-colors duration-300">Terms of Service</Link>
+            <Link to="/contact" className="hover:text-[#d4a373] transition-colors duration-300">Cookie Policy</Link>
           </div>
         </div>
       </div>

@@ -63,7 +63,7 @@ export default function Header() {
     { name: 'Products', path: '/products' },
     { name: 'Services', path: '/services' },
     { name: 'Our Story', path: '/our-story' },
-    { name: 'Quality', path: '/#quality' },
+    { name: 'Quality', path: '/quality' },
     { name: 'Contact', path: '/contact' },
   ];
 

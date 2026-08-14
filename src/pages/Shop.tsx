@@ -3,13 +3,16 @@ import { Filter } from 'lucide-react';
 import { useState } from 'react';
 
 import heroBgImg from '../assets/premium_tea_hero_1786082060617.png';
-
+import img1 from '../assets/assam_ctc_tea_1786083099298.png';
+import img2 from '../assets/darjeeling_first_flush_1786083109823.png';
+import img3 from '../assets/masala_chai_1786083121309.png';
+import img4 from '../assets/earl_grey_1786083131352.png';
 export default function Shop() {
   const mockImages = [
-    'https://images.unsplash.com/photo-1702987908200-de80baec74e4?q=80&w=600&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1767721887917-ad186b3f5f2d?q=80&w=600&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1572232189109-8462e31c1202?q=80&w=600&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1527398317618-b3da8a79e0ca?q=80&w=600&auto=format&fit=crop'
+    img1,
+    img2,
+    img3,
+    img4
   ];
 
   const products = [

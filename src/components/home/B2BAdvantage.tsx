@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { Shield, TrendingUp, Leaf, Globe, CheckCircle2 } from 'lucide-react';
 
+import img1 from '../../assets/bulk_tea_supply_1786082123663.png';
+import img2 from '../../assets/assam_ctc_tea_1786083099298.png';
+import img3 from '../../assets/masala_chai_1786083121309.png';
+import img4 from '../../assets/earl_grey_1786083131352.png';
+
 export default function B2BAdvantage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(0);
 
@@ -10,28 +15,28 @@ export default function B2BAdvantage() {
       title: 'Uncompromising Quality',
       description: 'Rigorous multi-stage cupping and ISO-certified lab testing to guarantee consistency and flavor profile across massive volumes.',
       icon: Shield,
-      image: 'https://images.unsplash.com/photo-1668587877964-16488273b0ab?q=80&w=800&auto=format&fit=crop'
+      image: img1
     },
     {
       num: '02',
       title: 'Limitless Scale',
       description: 'State-of-the-art machinery and direct plantation access allow us to seamlessly meet the demands of global FMCG giants.',
       icon: TrendingUp,
-      image: 'https://images.unsplash.com/photo-1708010433898-2685301f61ed?q=80&w=800&auto=format&fit=crop'
+      image: img2
     },
     {
       num: '03',
       title: 'Turn-Key OEM',
       description: 'From custom sourcing to premium packaging design, we provide a complete Private Label ecosystem. You sell, we manufacture.',
       icon: Leaf,
-      image: 'https://images.unsplash.com/photo-1702987908200-de80baec74e4?q=80&w=800&auto=format&fit=crop'
+      image: img3
     },
     {
       num: '04',
       title: 'Global Export',
       description: 'Our dedicated export division navigates complex international customs and logistics, ensuring delivery to over 40 countries.',
       icon: Globe,
-      image: 'https://images.unsplash.com/photo-1644335471325-52e2d44fca64?q=80&w=800&auto=format&fit=crop'
+      image: img4
     }
   ];
 
